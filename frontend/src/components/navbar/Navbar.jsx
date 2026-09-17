@@ -1,13 +1,5 @@
-import React from "react";
-import LoadingSpinner, { Spinner } from "../shared/Spinner";
-
 const Navbar = () => {
-  return (
-    <div>
-      Navbar
-      <Spinner />
-    </div>
-  );
+  return <div>Navbar</div>;
 };
 
 export default Navbar;
