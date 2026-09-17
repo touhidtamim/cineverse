@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="bg-zinc-950 border-b border-zinc-800">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/*Logo and Title*/}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <div className="w-9 h-9 rounded-lg overflow-hidden">
             <img
               src={movieLogo}
