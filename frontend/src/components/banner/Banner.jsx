@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="relative h-[80vh] flex items-center justify-center bg-gray-900 overflow-hidden">
-      {/* Background with overlay */}
+    <div className="relative min-h-[70vh] md:h-[80vh] flex items-center justify-center bg-gray-900 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
@@ -12,18 +11,21 @@ const Banner = () => {
         }}
       ></div>
 
-      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-3xl">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">DISCOVER MOVIES</h1>
-        <p className="text-xl text-gray-200 mb-8">
-          Explore and discover your favorite movies and TV shows from around the
-          world.
+        <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold mb-5 md:mb-6">
+          YOUR NEXT MOVIE AWAITS
+        </h1>
+
+        <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-7 md:mb-8">
+          Discover great movies, explore new stories, and find something worth
+          watching.
         </p>
+
         <Link
           to="/movies"
-          className="bg-red-600 hover:bg-red-700 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all shadow-lg"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all shadow-lg"
         >
-          Explore Now
+          Explore Movies
         </Link>
       </div>
     </div>
