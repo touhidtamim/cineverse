@@ -6,30 +6,56 @@ const Movies = () => {
   useEffect(() => {
     fetch("https://api.tvmaze.com/shows")
       .then((res) => res.json())
-      .then((data) => setMovies(data.slice(0, 80)));
+      .then((data) => setMovies(data.slice(0, 50)));
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Movie Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+    <div className="container mx-auto px-4 py-6 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold">All Movies</h1>
+        <p className="text-sm sm:text-base text-gray-400 mt-1">
+          Explore movies and TV shows worth watching.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="bg-zinc-900 rounded-lg overflow-hidden"
+            className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-700 transition-colors"
           >
-            <img
-              src={movie.image?.medium}
-              alt={movie.name}
-              className="w-full aspect-[2/3] object-cover"
-            />
+            <div className="relative">
+              <img
+                src={movie.image?.medium}
+                alt={movie.name}
+                className="w-full aspect-[2/3] object-cover"
+              />
 
-            <div className="p-3">
-              <h2 className="font-semibold truncate">{movie.name}</h2>
+              <div className="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded-md text-xs font-medium">
+                ⭐ {movie.rating?.average || "N/A"}
+              </div>
+            </div>
 
-              <p className="text-sm text-gray-400 mt-1">
-                {movie.premiered?.slice(0, 4) || "N/A"}
-              </p>
+            <div className="p-3 sm:p-4">
+              <h2 className="font-semibold text-base sm:text-lg truncate">
+                {movie.name}
+              </h2>
+
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 mt-2">
+                <span>{movie.premiered?.slice(0, 4) || "N/A"}</span>
+                <span>•</span>
+                <span>{movie.language || "Unknown"}</span>
+              </div>
+
+              {movie.genres?.length > 0 && (
+                <p className="text-xs text-gray-500 mt-2 truncate">
+                  {movie.genres.slice(0, 2).join(" • ")}
+                </p>
+              )}
+
+              <button className="w-full mt-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-medium transition-colors">
+                See Details
+              </button>
             </div>
           </div>
         ))}
