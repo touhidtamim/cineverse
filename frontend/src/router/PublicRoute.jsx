@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Home from "./../pages/home/Home";
 import Movies from "./../pages/movies/Movies";
+import Genre from "../pages/Genre";
+import Trending from "../pages/Trending";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
       {
         path: "/movies",
         element: <Movies />,
+      },
+      {
+        path: "/genres",
+        element: <Genre />,
+      },
+      {
+        path: "/trending",
+        element: <Trending />,
       },
     ],
   },
