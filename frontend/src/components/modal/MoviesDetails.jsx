@@ -14,7 +14,7 @@ const MoviesDetails = ({ movie, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 bg-black/50 rounded-full"
+          className="cursor-pointer absolute top-3 right-3 z-10 w-8 h-8 bg-black/50 rounded-full"
         >
           ✕
         </button>
@@ -60,7 +60,7 @@ const MoviesDetails = ({ movie, onClose }) => {
 
           <button
             onClick={onClose}
-            className="w-full sm:w-auto mt-6 px-6 py-2 bg-red-600 hover:bg-red-700 rounded text-sm"
+            className="cursor-pointer w-full sm:w-auto mt-6 px-6 py-2 bg-red-600 hover:bg-red-700 rounded text-sm"
           >
             Close
           </button>
