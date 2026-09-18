@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import MoviesDetails from "../../components/modal/MoviesDetails";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     fetch("https://api.tvmaze.com/shows")
@@ -53,13 +55,23 @@ const Movies = () => {
                 </p>
               )}
 
-              <button className="w-full mt-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-medium transition-colors">
+              <button
+                onClick={() => setSelectedMovie(movie)}
+                className="w-full mt-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-medium transition-colors"
+              >
                 See Details
               </button>
             </div>
           </div>
         ))}
       </div>
+
+      {selectedMovie && (
+        <MoviesDetails
+          movie={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+        />
+      )}
     </div>
   );
 };
