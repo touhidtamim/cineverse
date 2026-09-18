@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./../components/navbar/Navbar";
 import Footer from "./../components/footer/Footer";
-import { Outlet, useNavigation } from "react-router";
+import { Outlet, useNavigation } from "react-router-dom";
 import { Spinner } from "./../components/shared/Spinner";
 
 const MainLayout = () => {
@@ -14,7 +14,7 @@ const MainLayout = () => {
 
       {navigation.state === "loading" && <Spinner />}
 
-      {/* Dynamic component*/}
+      {/* Dynamic component */}
       <div className="w-11/12 mx-auto min-h-screen">
         <Outlet />
       </div>

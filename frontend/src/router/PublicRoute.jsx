@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import Home from "./../pages/home/Home";
-import Movies from "./../pages/movies/Movies";
+import Home from "../pages/home/Home";
+import Movies from "../pages/movies/Movies";
 import Genre from "../pages/Genre";
 import Trending from "../pages/Trending";
 
